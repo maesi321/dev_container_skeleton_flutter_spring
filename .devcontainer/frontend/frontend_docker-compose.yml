@@ -1,0 +1,17 @@
+services:
+
+  # adding frontend service for dev-container
+  # the start command is overwritten to prevent auto start of service
+  frontend:
+    extends: 
+      file: ../docker/docker-compose.yml
+      service: frontend
+    # start command with optional connection to android emulator on host
+    # set android emulation connection to port 5555, the emulator must be running on bare metal and the command "adb tcpip 5555" must be executed on host
+    command: [ "sh", "-c", "adb connect host.docker.internal:5555 && cd /project/src_frontend && flutter pub upgrade && sleep infinity" ]
+
+  # adding backend service without overwriting anything
+  backend:
+    extends:
+      file: ../docker/docker-compose.yml
+      service: backend

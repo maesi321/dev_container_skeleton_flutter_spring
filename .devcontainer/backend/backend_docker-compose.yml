@@ -1,0 +1,15 @@
+services:
+
+  # adding fronten service without overwriting anything
+  frontend:
+    extends:
+      file: ../docker/docker-compose.yml
+      service: frontend
+
+  # adding backend service for dev-container
+  # the start command is overwritten to prevent auto start of service
+  backend:
+    extends:
+      file: ../docker/docker-compose.yml
+      service: backend
+    command: [ "sh", "-c", "cd /project/src_backend && mvn dependency:go-offline -B && sleep infinity" ]

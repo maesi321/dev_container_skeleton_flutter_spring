@@ -1,0 +1,17 @@
+// main configuration is done in docker-compose and dockerfile
+// here are only the definitions relevant for VS Code
+{
+    "name": "backend",
+    "dockerComposeFile": "backend_docker-compose.yml",
+    "service": "backend",
+    "workspaceFolder": "/project/src_backend",
+    "overrideCommand": false,
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack"
+            ]
+        }
+    }
+}

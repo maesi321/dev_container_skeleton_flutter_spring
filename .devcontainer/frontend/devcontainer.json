@@ -1,0 +1,20 @@
+// main configuration is done in docker-compose and dockerfile
+// here are only the definitions relevant for VS Code
+{
+    "name": "frontend",
+    "dockerComposeFile": "frontend_docker-compose.yml",
+    "service": "frontend",
+    "workspaceFolder": "/project/src_frontend",
+	"overrideCommand": false,
+
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"dart.flutterHotReloadOnSave": true
+			},
+			"extensions": [
+				"dart-code.flutter"
+			]
+		}
+	}
+}
