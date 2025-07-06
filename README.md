@@ -19,6 +19,7 @@ This project is far from being production ready. It lacks things like .env files
 
 ## Other skeletons
 - [React and FastAPI](https://github.com/maesi321/dev_container_skeleton_react_fastapi)
+- [LaTex](https://github.com/maesi321/dev_container_skeleton_latex)
 
 ## Mental model
 The repo is a mono-repo and consists of following parts:
