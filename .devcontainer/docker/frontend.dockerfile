@@ -7,6 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # - basic tools
 # - tools to download and unzip files
 # - dependencies for flutter -> see "flutter doctor"
+# - cleanup
 RUN apt-get update -y && apt-get upgrade -y && \ 
     apt-get install -y \
     git \
@@ -21,7 +22,9 @@ RUN apt-get update -y && apt-get upgrade -y && \
     cmake \
     ninja-build \
     pkg-config \
-    libgtk-3-dev
+    libgtk-3-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # create a temp folder to download and unzip and a sdk folder    
 RUN mkdir -p /tmp/android && \
